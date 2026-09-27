@@ -1,0 +1,285 @@
+DOCTYPE html>
+
+<html lang="ku" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>mash cafe</title>
+
+<style>
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  background: #f5f5f5;
+
+  margin: 0;
+
+  padding: 20px;
+
+}
+
+.container {
+
+  max-width: 500px;
+
+  margin: auto;
+
+}
+
+h1 {
+
+  text-align: center;
+
+  font-size: 36px;
+
+}
+
+.subtitle {
+
+  text-align: center;
+
+  color: #777;
+
+  margin-bottom: 25px;
+
+}
+
+.item {
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 18px;
+
+  margin-bottom: 15px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  box-shadow: 0 3px 10px #ddd;
+
+}
+
+.name {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+}
+
+.price {
+
+  color: #d35400;
+
+  font-weight: bold;
+
+  margin-top: 6px;
+
+}
+
+button {
+
+  background: #111;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+}
+
+.cart {
+
+  background: #111;
+
+  color: white;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  margin-top: 25px;
+
+  text-align: center;
+
+}
+
+.order {
+
+  background: #27ae60;
+
+  width: 100%;
+
+  margin-top: 10px;
+
+  font-size: 18px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>mash cafe ☕</h1>
+
+<div class="subtitle">بەخێربێن بۆ Mash Cafe ❤️</div>
+
+<div class="item">
+
+  <div>
+
+    <div class="name">🌯 شاورمە</div>
+
+    <div class="price">1,000 د.ع</div>
+
+  </div>
+
+  <button onclick="add('شاورمە',1000)">زیاد بکە</button>
+
+</div>
+
+<div class="item">
+
+  <div>
+
+    <div class="name">🍵 چا</div>
+
+    <div class="price">250 د.ع</div>
+
+  </div>
+
+  <button onclick="add('چا',250)">زیاد بکە</button>
+
+</div>
+
+<div class="item">
+
+  <div>
+
+    <div class="name">☕ قاوەی سارد</div>
+
+    <div class="price">500 د.ع</div>
+
+  </div>
+
+  <button onclick="add('قاوەی سارد',500)">زیاد بکە</button>
+
+</div>
+
+<div class="item">
+
+  <div>
+
+    <div class="name">💧 ئاو</div>
+
+    <div class="price">250 د.ع</div>
+
+  </div>
+
+  <button onclick="add('ئاو',250)">زیاد بکە</button>
+
+</div>
+
+<div class="item">
+
+  <div>
+
+    <div class="name">🍪 بیسکیت</div>
+
+    <div class="price">50 د.ع</div>
+
+  </div>
+
+  <button onclick="add('بیسکیت',50)">زیاد بکە</button>
+
+</div>
+
+<div class="item">
+
+  <div>
+
+    <div class="name">🍟 فینگەر فود</div>
+
+    <div class="price">1,000 د.ع</div>
+
+  </div>
+
+  <button onclick="add('فینگەر فود',1000)">زیاد بکە</button>
+
+</div>
+
+<div class="cart">
+
+  <h2>🛒 داواکارییەکەت</h2>
+
+  <div id="cart">هیچ شتێکت هەڵنەبژاردووە</div>
+
+  <h3 id="total">کۆی گشتی: 0 د.ع</h3>
+
+  <button class="order" onclick="order()">ناردنی داواکاری</button>
+
+</div>
+
+</div>
+
+<script>
+
+let items = [];
+
+let total = 0;
+
+function add(name, price) {
+
+  items.push(name);
+
+  total += price;
+
+  document.getElementById("cart").innerHTML =
+
+    items.join("<br>");
+
+  document.getElementById("total").innerHTML =
+
+    "کۆی گشتی: " + total.toLocaleString() + " د.ع";
+
+}
+
+function order() {
+
+  if (items.length === 0) {
+
+    alert("تکایە خواردنێک هەڵبژێرە");
+
+    return;
+
+  }
+
+  alert(
+
+    "داواکارییەکەت تۆمار کرا ❤️\n\n" +
+
+    items.join("\n") +
+
+    "\n\nکۆی گشتی: " +
+
+    total.toLocaleString() + " د.ع"
