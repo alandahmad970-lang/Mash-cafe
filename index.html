@@ -4,282 +4,596 @@ DOCTYPE html>
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>mash cafe</title>
+  <title>mash cafe</title>
 
-<style>
+  <style>
 
-body {
+    * {
 
-  font-family: Arial, sans-serif;
+      box-sizing: border-box;
 
-  background: #f5f5f5;
+    }
 
-  margin: 0;
+    body {
 
-  padding: 20px;
+      margin: 0;
 
-}
+      font-family: Arial, sans-serif;
 
-.container {
+      background: #f7f3ee;
 
-  max-width: 500px;
+      color: #222;
 
-  margin: auto;
+    }
 
-}
+    header {
 
-h1 {
+      background: #222;
 
-  text-align: center;
+      color: white;
 
-  font-size: 36px;
+      text-align: center;
 
-}
+      padding: 28px 15px;
 
-.subtitle {
+      border-radius: 0 0 25px 25px;
 
-  text-align: center;
+    }
 
-  color: #777;
+    header h1 {
 
-  margin-bottom: 25px;
+      margin: 0;
 
-}
+      font-size: 32px;
 
-.item {
+    }
 
-  background: white;
+    header p {
 
-  border-radius: 15px;
+      margin: 8px 0 0;
 
-  padding: 18px;
+      font-size: 15px;
 
-  margin-bottom: 15px;
+      opacity: 0.8;
 
-  display: flex;
+    }
 
-  justify-content: space-between;
+    .container {
 
-  align-items: center;
+      max-width: 600px;
 
-  box-shadow: 0 3px 10px #ddd;
+      margin: auto;
 
-}
+      padding: 20px 15px 40px;
 
-.name {
+    }
 
-  font-size: 20px;
+    .section-title {
 
-  font-weight: bold;
+      text-align: center;
 
-}
+      margin: 10px 0 20px;
 
-.price {
+      font-size: 23px;
 
-  color: #d35400;
+    }
 
-  font-weight: bold;
+    .item {
 
-  margin-top: 6px;
+      background: white;
 
-}
+      border-radius: 18px;
 
-button {
+      padding: 17px;
 
-  background: #111;
+      margin-bottom: 13px;
 
-  color: white;
+      display: flex;
 
-  border: none;
+      align-items: center;
 
-  padding: 10px 16px;
+      justify-content: space-between;
 
-  border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
 
-  font-size: 16px;
+    }
 
-}
+    .item-info {
 
-.cart {
+      display: flex;
 
-  background: #111;
+      align-items: center;
 
-  color: white;
+      gap: 12px;
 
-  padding: 20px;
+    }
 
-  border-radius: 15px;
+    .emoji {
 
-  margin-top: 25px;
+      font-size: 34px;
 
-  text-align: center;
+    }
 
-}
+    .name {
 
-.order {
+      font-size: 18px;
 
-  background: #27ae60;
+      font-weight: bold;
 
-  width: 100%;
+    }
 
-  margin-top: 10px;
+    .price {
 
-  font-size: 18px;
+      margin-top: 5px;
 
-}
+      color: #777;
 
-</style>
+      font-size: 15px;
+
+    }
+
+    button {
+
+      border: none;
+
+      background: #222;
+
+      color: white;
+
+      padding: 10px 15px;
+
+      border-radius: 12px;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+    }
+
+    button:active {
+
+      transform: scale(0.96);
+
+    }
+
+    .cart {
+
+      background: white;
+
+      margin-top: 25px;
+
+      padding: 20px;
+
+      border-radius: 20px;
+
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+
+    }
+
+    .cart h2 {
+
+      margin-top: 0;
+
+      font-size: 21px;
+
+    }
+
+    #cartItems {
+
+      line-height: 2;
+
+    }
+
+    .total {
+
+      border-top: 1px solid #ddd;
+
+      margin-top: 12px;
+
+      padding-top: 12px;
+
+      font-size: 19px;
+
+      font-weight: bold;
+
+    }
+
+    .order-btn {
+
+      width: 100%;
+
+      margin-top: 15px;
+
+      background: #222;
+
+      font-size: 17px;
+
+      padding: 14px;
+
+    }
+
+    .empty {
+
+      color: #888;
+
+      text-align: center;
+
+    }
+
+    footer {
+
+      text-align: center;
+
+      color: #888;
+
+      padding: 20px;
+
+      font-size: 13px;
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
+<header>
+
+  <h1>☕ mash cafe</h1>
+
+  <p>بەخێربێن بۆ Mash Cafe ❤️</p>
+
+</header>
+
 <div class="container">
 
-<h1>mash cafe ☕</h1>
+  <h2 class="section-title">📋 مێنیو</h2>
 
-<div class="subtitle">بەخێربێن بۆ Mash Cafe ❤️</div>
+  <div class="item">
 
-<div class="item">
+    <div class="item-info">
 
-  <div>
+      <div class="emoji">🍳</div>
 
-    <div class="name">🌯 شاورمە</div>
+      <div>
 
-    <div class="price">1,000 د.ع</div>
+        <div class="name">نانی بەیانی بۆ ٣ کەس</div>
 
-  </div>
+        <div class="price">٥,٠٠٠ د.ع</div>
 
-  <button onclick="add('شاورمە',1000)">زیاد بکە</button>
+      </div>
 
-</div>
+    </div>
 
-<div class="item">
-
-  <div>
-
-    <div class="name">🍵 چا</div>
-
-    <div class="price">250 د.ع</div>
+    <button onclick="addItem('نانی بەیانی بۆ ٣ کەس', 5000)">زیاد بکە</button>
 
   </div>
 
-  <button onclick="add('چا',250)">زیاد بکە</button>
+  <div class="item">
 
-</div>
+    <div class="item-info">
 
-<div class="item">
+      <div class="emoji">🌯</div>
 
-  <div>
+      <div>
 
-    <div class="name">☕ قاوەی سارد</div>
+        <div class="name">شاورمە</div>
 
-    <div class="price">500 د.ع</div>
+        <div class="price">١,٠٠٠ د.ع</div>
 
-  </div>
+      </div>
 
-  <button onclick="add('قاوەی سارد',500)">زیاد بکە</button>
+    </div>
 
-</div>
-
-<div class="item">
-
-  <div>
-
-    <div class="name">💧 ئاو</div>
-
-    <div class="price">250 د.ع</div>
+    <button onclick="addItem('شاورمە', 1000)">زیاد بکە</button>
 
   </div>
 
-  <button onclick="add('ئاو',250)">زیاد بکە</button>
+  <div class="item">
 
-</div>
+    <div class="item-info">
 
-<div class="item">
+      <div class="emoji">🍟</div>
 
-  <div>
+      <div>
 
-    <div class="name">🍪 بیسکیت</div>
+        <div class="name">فینگەر فود</div>
 
-    <div class="price">50 د.ع</div>
+        <div class="price">١,٠٠٠ د.ع</div>
 
-  </div>
+      </div>
 
-  <button onclick="add('بیسکیت',50)">زیاد بکە</button>
+    </div>
 
-</div>
-
-<div class="item">
-
-  <div>
-
-    <div class="name">🍟 فینگەر فود</div>
-
-    <div class="price">1,000 د.ع</div>
+    <button onclick="addItem('فینگەر فود', 1000)">زیاد بکە</button>
 
   </div>
 
-  <button onclick="add('فینگەر فود',1000)">زیاد بکە</button>
+  <div class="item">
+
+    <div class="item-info">
+
+      <div class="emoji">💧</div>
+
+      <div>
+
+        <div class="name">ئاو</div>
+
+        <div class="price">٢٥٠ د.ع</div>
+
+      </div>
+
+    </div>
+
+    <button onclick="addItem('ئاو', 250)">زیاد بکە</button>
+
+  </div>
+
+  <div class="item">
+
+    <div class="item-info">
+
+      <div class="emoji">🧊</div>
+
+      <div>
+
+        <div class="name">قاوەی سارد</div>
+
+        <div class="price">٥٠٠ د.ع</div>
+
+      </div>
+
+    </div>
+
+    <button onclick="addItem('قاوەی سارد', 500)">زیاد بکە</button>
+
+  </div>
+
+  <div class="item">
+
+    <div class="item-info">
+
+      <div class="emoji">🍝</div>
+
+      <div>
+
+        <div class="name">پاستا</div>
+
+        <div class="price">٢,٠٠٠ د.ع</div>
+
+      </div>
+
+    </div>
+
+    <button onclick="addItem('پاستا', 2000)">زیاد بکە</button>
+
+  </div>
+
+  <div class="item">
+
+    <div class="item-info">
+
+      <div class="emoji">🍫</div>
+
+      <div>
+
+        <div class="name">قاوە چۆکڵێتی</div>
+
+        <div class="price">١,٠٠٠ د.ع</div>
+
+      </div>
+
+    </div>
+
+    <button onclick="addItem('قاوە چۆکڵێتی', 1000)">زیاد بکە</button>
+
+  </div>
+
+  <div class="item">
+
+    <div class="item-info">
+
+      <div class="emoji">🍊</div>
+
+      <div>
+
+        <div class="name">شەربەتی پرتەقاڵ فریش</div>
+
+        <div class="price">١,٥٠٠ د.ع</div>
+
+      </div>
+
+    </div>
+
+    <button onclick="addItem('شەربەتی پرتەقاڵ فریش', 1500)">زیاد بکە</button>
+
+  </div>
+
+  <div class="item">
+
+    <div class="item-info">
+
+      <div class="emoji">🫐</div>
+
+      <div>
+
+        <div class="name">مۆهیتۆ بلوبێری</div>
+
+        <div class="price">١,٠٠٠ د.ع</div>
+
+      </div>
+
+    </div>
+
+    <button onclick="addItem('مۆهیتۆ بلوبێری', 1000)">زیاد بکە</button>
+
+  </div>
+
+  <div class="item">
+
+    <div class="item-info">
+
+      <div class="emoji">☕</div>
+
+      <div>
+
+        <div class="name">کاپوچینۆ</div>
+
+        <div class="price">٥٠٠ د.ع</div>
+
+      </div>
+
+    </div>
+
+    <button onclick="addItem('کاپوچینۆ', 500)">زیاد بکە</button>
+
+  </div>
+
+  <div class="cart">
+
+    <h2>🛒 داواکارییەکەت</h2>
+
+    <div id="cartItems" class="empty">
+
+      هیچ شتێکت هەڵنەبژاردووە
+
+    </div>
+
+    <div class="total">
+
+      کۆی گشتی: <span id="total">٠</span> د.ع
+
+    </div>
+
+    <button class="order-btn" onclick="sendOrder()">
+
+      📩 ناردنی داواکاری
+
+    </button>
+
+  </div>
 
 </div>
 
-<div class="cart">
+<footer>
 
-  <h2>🛒 داواکارییەکەت</h2>
+  mash cafe ☕ — سوپاس بۆ سەردانکردنتان ❤️
 
-  <div id="cart">هیچ شتێکت هەڵنەبژاردووە</div>
-
-  <h3 id="total">کۆی گشتی: 0 د.ع</h3>
-
-  <button class="order" onclick="order()">ناردنی داواکاری</button>
-
-</div>
-
-</div>
+</footer>
 
 <script>
 
-let items = [];
+  let cart = [];
 
-let total = 0;
+  let total = 0;
 
-function add(name, price) {
+  function addItem(name, price) {
 
-  items.push(name);
+    cart.push({
 
-  total += price;
+      name: name,
 
-  document.getElementById("cart").innerHTML =
+      price: price
 
-    items.join("<br>");
+    });
 
-  document.getElementById("total").innerHTML =
+    total += price;
 
-    "کۆی گشتی: " + total.toLocaleString() + " د.ع";
-
-}
-
-function order() {
-
-  if (items.length === 0) {
-
-    alert("تکایە خواردنێک هەڵبژێرە");
-
-    return;
+    updateCart();
 
   }
 
-  alert(
+  function updateCart() {
 
-    "داواکارییەکەت تۆمار کرا ❤️\n\n" +
+    const cartItems = document.getElementById("cartItems");
 
-    items.join("\n") +
+    const totalElement = document.getElementById("total");
 
-    "\n\nکۆی گشتی: " +
+    if (cart.length === 0) {
 
-    total.toLocaleString() + " د.ع"
+      cartItems.innerHTML = "هیچ شتێکت هەڵنەبژاردووە";
+
+      cartItems.className = "empty";
+
+    } else {
+
+      cartItems.className = "";
+
+      let html = "";
+
+      cart.forEach(function(item, index) {
+
+        html += `
+
+          <div>
+
+            ${index + 1}. ${item.name}
+
+            — ${item.price.toLocaleString('en-US')} د.ع
+
+          </div>
+
+        `;
+
+      });
+
+      cartItems.innerHTML = html;
+
+    }
+
+    totalElement.innerText =
+
+      total.toLocaleString('en-US');
+
+  }
+
+  function sendOrder() {
+
+    if (cart.length === 0) {
+
+      alert("تکایە سەرەتا خواردنێک هەڵبژێرە ❤️");
+
+      return;
+
+    }
+
+    let message = "داواکاری نوێ بۆ mash cafe:%0A%0A";
+
+    cart.forEach(function(item, index) {
+
+      message +=
+
+        (index + 1) +
+
+        ". " +
+
+        item.name +
+
+        " — " +
+
+        item.price.toLocaleString('en-US') +
+
+        " د.ع%0A";
+
+    });
+
+    message +=
+
+      "%0Aکۆی گشتی: " +
+
+      total.toLocaleString('en-US') +
+
+      " د.ع";
+
+    alert(
+
+      "داواکارییەکەت ئامادەیە ❤️\n\nکۆی گشتی: " +
+
+      total.toLocaleString('en-US') +
+
+      " د.ع
